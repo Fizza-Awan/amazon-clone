@@ -1,0 +1,296 @@
+const products = [
+  {
+    title: "Apple iPhone 15 (128 GB) - Blue",
+    price: 69999,
+    mrp: 79900,
+    image: "https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=400&h=400&fit=crop",
+    category: "Mobile Phones",
+    rating: { rate: 4.5, count: 8742 },
+    prime: true,
+    countInStock: 30,
+    description: "48MP camera, A16 Bionic chip, Dynamic Island, USB-C connector"
+  },
+  {
+    title: "OnePlus Nord CE 3 Lite 5G (Pastel Lime, 8GB RAM, 128GB)",
+    price: 14999,
+    mrp: 19999,
+    image: "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=400&fit=crop",
+    category: "Mobile Phones",
+    rating: { rate: 4.2, count: 45321 },
+    prime: true,
+    countInStock: 40,
+    description: "108MP Main Camera, 5000mAh Battery, 67W SUPERVOOC Charging"
+  },
+  {
+    title: "Redmi 12 5G (Jade Black, 6GB RAM, 128GB Storage)",
+    price: 11999,
+    mrp: 17999,
+    image: "https://images.unsplash.com/photo-1567581935884-3349723552ca?w=400&h=400&fit=crop",
+    category: "Mobile Phones",
+    rating: { rate: 4.0, count: 18923 },
+    prime: false,
+    countInStock: 60,
+    description: "MediaTek Dimensity 4G, 50MP AI Dual Camera, 5000mAh Battery"
+  },
+  {
+    title: "realme narzo N55 (Prime Blue, 6GB+128GB)",
+    price: 10499,
+    mrp: 14999,
+    image: "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=400&fit=crop",
+    category: "Mobile Phones",
+    rating: { rate: 4.1, count: 32145 },
+    prime: true,
+    countInStock: 45,
+    description: "33W Segment Fastest Charging, Super High-res 64MP Primary AI Camera"
+  },
+  {
+    title: "boAt Airdopes 141 Bluetooth Truly Wireless Ear Buds",
+    price: 1299,
+    mrp: 4490,
+    image: "https://images.unsplash.com/photo-1572536147248-ac59a8abfa4b?w=400&h=400&fit=crop",
+    category: "Electronics",
+    rating: { rate: 3.9, count: 87654 },
+    prime: true,
+    countInStock: 200,
+    description: "42H Playtime, ENx Low Latency Mode, IPX4 Water Resistance, IWP Technology"
+  },
+  {
+    title: "Sony WH-1000XM5 Wireless Noise Cancelling Headphones",
+    price: 24990,
+    mrp: 34990,
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop",
+    category: "Electronics",
+    rating: { rate: 4.4, count: 4532 },
+    prime: true,
+    countInStock: 25,
+    description: "Industry Leading Noise Cancellation, 30Hr Battery, Alexa Voice Control"
+  },
+  {
+    title: "Fire-Boltt Ninja Call Pro Plus 1.83\" Smart Watch",
+    price: 1599,
+    mrp: 7999,
+    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop",
+    category: "Electronics",
+    rating: { rate: 3.8, count: 65432 },
+    prime: true,
+    countInStock: 100,
+    description: "Smart Watch with AI Voice Assistance, 100 Sports Modes, 240*280 Pixel Display"
+  },
+  {
+    title: "Logitech G502 Hero Gaming Mouse",
+    price: 3995,
+    mrp: 6795,
+    image: "https://m.media-amazon.com/images/I/61mpMH5TzkL._SL1500_.jpg",
+    category: "Electronics",
+    rating: { rate: 4.5, count: 12345 },
+    prime: true,
+    countInStock: 80,
+    description: "High Performance Gaming Mouse with 25K DPI HERO Sensor, 11 Programmable Buttons"
+  },
+  {
+    title: "Allen Solly Men Regular Fit Polo T-Shirt",
+    price: 759,
+    mrp: 1499,
+    image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=400&h=400&fit=crop",
+    category: "Fashion",
+    rating: { rate: 4.0, count: 2345 },
+    prime: false,
+    countInStock: 150,
+    description: "Cotton blend, Regular fit, Recommended for casual & semi-formal occasions"
+  },
+  {
+    title: "Levi's Men's 511 Slim Fit Jeans",
+    price: 1899,
+    mrp: 3999,
+    image: "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop",
+    category: "Fashion",
+    rating: { rate: 4.2, count: 7834 },
+    prime: true,
+    countInStock: 120,
+    description: "Slim through hip and thigh, modern look, cotton stretch denim"
+  },
+  {
+    title: "Nike Revolution 6 Men's Running Shoes",
+    price: 2796,
+    mrp: 3995,
+    image: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&h=400&fit=crop",
+    category: "Fashion",
+    rating: { rate: 4.3, count: 9876 },
+    prime: true,
+    countInStock: 90,
+    description: "Lightweight cushioned comfort, plush foam midsole, minimalist design"
+  },
+  {
+    title: "Puma Unisex-Adult Popcat 20 Slide Sandal",
+    price: 649,
+    mrp: 1299,
+    image: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=400&h=400&fit=crop",
+    category: "Fashion",
+    rating: { rate: 4.1, count: 56789 },
+    prime: true,
+    countInStock: 200,
+    description: "Synthetic, Slip On closure, Padded footbed for comfort"
+  },
+  {
+    title: "Prestige Iris 750 Watt Mixer Grinder with 3 Stainless Steel Jar",
+    price: 2299,
+    mrp: 4195,
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.1, count: 23456 },
+    prime: true,
+    countInStock: 60,
+    description: "750 Watts powerful motor, Stainless steel jars, 3 speed control"
+  },
+  {
+    title: "Pigeon by Stovekraft Favourite Outer Lid Non-Induction Pressure Cooker, 3 Litres",
+    price: 689,
+    mrp: 1445,
+    image: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.0, count: 98765 },
+    prime: true,
+    countInStock: 75,
+    description: "Aluminium body, Outer lid, Suitable for gas stove only"
+  },
+  {
+    title: "Milton Thermosteel Flip Lid Flask, 1 Litre, Silver",
+    price: 699,
+    mrp: 1085,
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.2, count: 43210 },
+    prime: true,
+    countInStock: 100,
+    description: "Double wall insulated, Keeps beverages hot or cold for hours"
+  },
+  {
+    title: "Amazon Basics Cotton Bath Towel - 500 GSM (Pack of 2)",
+    price: 799,
+    mrp: 1199,
+    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.3, count: 34567 },
+    prime: true,
+    countInStock: 150,
+    description: "100% cotton, 500 GSM for softness and absorbency, Fade-resistant"
+  },
+  {
+    title: "Kuber Industries Multiuses Plastic Storage Basket with Lid, Set of 3",
+    price: 449,
+    mrp: 999,
+    image: "https://images.pexels.com/photos/13968346/pexels-photo-13968346.jpeg?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 3.9, count: 12345 },
+    prime: false,
+    countInStock: 200,
+    description: "Durable plastic, Stackable design, Multi-purpose storage"
+  },
+  {
+    title: "Atomic Habits by James Clear",
+    price: 399,
+    mrp: 799,
+    image: "https://m.media-amazon.com/images/I/81F90H7hnML._SL1500_.jpg",
+    category: "Books",
+    rating: { rate: 4.6, count: 123456 },
+    prime: true,
+    countInStock: 500,
+    description: "An Easy & Proven Way to Build Good Habits & Break Bad Ones"
+  },
+  {
+    title: "The Psychology of Money by Morgan Housel",
+    price: 299,
+    mrp: 399,
+    image: "https://m.media-amazon.com/images/I/81Dky+tD+pL._SL1500_.jpg",
+    category: "Books",
+    rating: { rate: 4.5, count: 76543 },
+    prime: true,
+    countInStock: 400,
+    description: "Timeless lessons on wealth, greed, and happiness"
+  },
+  {
+    title: "Rich Dad Poor Dad by Robert T. Kiyosaki",
+    price: 279,
+    mrp: 399,
+    image: "https://m.media-amazon.com/images/I/81bsw6fnUiL._SL1500_.jpg",
+    category: "Books",
+    rating: { rate: 4.5, count: 98765 },
+    prime: true,
+    countInStock: 300,
+    description: "What the Rich Teach Their Kids About Money That the Poor and Middle Class Do Not"
+  },
+  {
+    title: "Ikigai: The Japanese Secret to a Long and Happy Life",
+    price: 249,
+    mrp: 350,
+    image: "https://m.media-amazon.com/images/I/81l3rZK4lnL._SL1500_.jpg",
+    category: "Books",
+    rating: { rate: 4.4, count: 45678 },
+    prime: true,
+    countInStock: 250,
+    description: "Discover your purpose and live a fulfilling life"
+  },
+  {
+    title: "Think and Grow Rich by Napoleon Hill",
+    price: 199,
+    mrp: 499,
+    image: "https://m.media-amazon.com/images/I/71UypkUjStL._SL1500_.jpg",
+    category: "Books",
+    rating: { rate: 4.4, count: 54321 },
+    prime: false,
+    countInStock: 350,
+    description: "Classic personal success literature, think your way to riches"
+  },
+    {
+    title: "Prestige Iris 750 Watt Mixer Grinder with 3 Stainless Steel Jar",
+    price: 2299,
+    mrp: 4195,
+    image: "https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.1, count: 23456 },
+    prime: true,
+    description: "750 Watts powerful motor, Stainless steel jars, 3 speed control"
+  },
+  {
+    title: "Pigeon by Stovekraft Favourite Outer Lid Non-Induction Pressure Cooker, 3 Litres",
+    price: 689,
+    mrp: 1445,
+    image: "https://images.unsplash.com/photo-1556909172-54557c7e4fb7?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.0, count: 98765 },
+    prime: true,
+    description: "Aluminium body, Outer lid, Suitable for gas stove only"
+  },
+  {
+    title: "Milton Thermosteel Flip Lid Flask, 1 Litre, Silver",
+    price: 699,
+    mrp: 1085,
+    image: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.2, count: 43210 },
+    prime: true,
+    description: "Double wall insulated, Keeps beverages hot or cold for hours"
+  },
+    {
+    title: "Amazon Basics Cotton Bath Towel - 500 GSM (Pack of 2)",
+    price: 799,
+    mrp: 1199,
+    image: "https://images.unsplash.com/photo-1563453392212-326f5e854473?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 4.3, count: 34567 },
+    prime: true,
+    description: "100% cotton, 500 GSM for softness and absorbency, Fade-resistant"
+  },
+  {
+    title: "Kuber Industries Multiuses Plastic Storage Basket with Lid, Set of 3",
+    price: 449,
+    mrp: 999,
+    image: "https://images.pexels.com/photos/13968346/pexels-photo-13968346.jpeg?w=400&h=400&fit=crop",
+    category: "Home & Kitchen",
+    rating: { rate: 3.9, count: 12345 },
+    prime: false,
+    description: "Durable plastic, Stackable design, Multi-purpose storage"
+  },
+];
+
+module.exports = products;
